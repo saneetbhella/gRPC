@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package payment;
+option go_package = "./grpc";
+
+message Payment {
+  string id = 1;
+  double price = 2;
+  string currency = 3;
+}
+
+message Response {
+  string status = 1;
+}
+
+service PaymentService {
+  rpc Pay(Payment) returns (Response) {}
+}
