@@ -3,7 +3,7 @@ module grpc
 go 1.18
 
 require (
-	github.com/saneetbhella/logger v1.0.1
+	github.com/saneetbhella/logger v1.0.2
 	google.golang.org/grpc v1.47.0
 	google.golang.org/protobuf v1.28.0
 )
