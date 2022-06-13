@@ -4,13 +4,16 @@
 // - protoc             v3.19.2
 // source: proto/payment/payment.proto
 
-package proto
+package payment
+
+import (
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/codes"
+	"google.golang.org/grpc/status"
+)
 
 import (
 	context "context"
-	grpc "google.golang.org/grpc"
-	codes "google.golang.org/grpc/codes"
-	status "google.golang.org/grpc/status"
 )
 
 // This is a compile-time assertion to ensure that this generated file

@@ -4,7 +4,7 @@ import (
 	"github.com/saneetbhella/logger"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
-	payment2 "grpc/proto/payment"
+	"grpc/proto/payment"
 	"net"
 	"net/http"
 	"os"
@@ -28,7 +28,7 @@ func main() {
 	grpcServer := grpc.NewServer()
 
 	// Register payment service to gRPC server
-	payment2.RegisterPaymentServiceServer(grpcServer, &payment2.Server{})
+	payment.RegisterPaymentServiceServer(grpcServer, &payment.Server{})
 
 	// Allows dynamic clients such as CLI tools for debugging
 	reflection.Register(grpcServer)
