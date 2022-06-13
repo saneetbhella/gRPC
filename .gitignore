@@ -1,2 +1,5 @@
 .idea
 .DS_Store
+static/node_modules
+static/yarn-error.log
+static/dist
