@@ -1,4 +1,4 @@
-// source: payment/payment.proto
+// source: proto/payment/payment.proto
 /**
  * @fileoverview
  * @enhanceable

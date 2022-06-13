@@ -14,35 +14,34 @@ Simple app that uses gRPC web and Envoy proxy to communicate to a gRPC server.
 ## Setup
 
 ### Installation
-Download Protobuf and Envoy for development.
+Download Protobuf tools and Envoy for development.
 ```
-brew install protobuf
+brew install protobuf protoc-gen-go protoc-gen-go-grpc protoc-gen-grpc-web
 brew install envoy
 ```
 
 ### Start
 1. Install frontend dependencies and setup hot-reload.
 ```
-yarn install --cwd ./static/
-yarn dev --cwd ./static/
+yarn --cwd './static/' install
+yarn --cwd './static/' dev
 ```
 
 2. Start a local Envoy instance.
-`envoy --config-path ./dev/envoy.yaml`
 ```
-yarn dev
+envoy --config-path ./dev/envoy.yaml
 ```
 ---
 
 ## Generating Protobuf Files
 ### Backend:
 ```
-protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative ./proto/payment/payment.proto`
+protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative ./proto/payment/payment.proto
 ```
 
 ### Frontend:
 ```
-protoc --js_out=import_style=commonjs:./static/client-stub --grpc-web_out=import_style=commonjs,mode=grpcwebtext:./static/client-stub ./proto/payment/payment.proto
+protoc --js_out=import_style=commonjs:./static --grpc-web_out=import_style=commonjs,mode=grpcwebtext:./static ./proto/payment/payment.proto
 ```
 ---
 

@@ -1,4 +1,4 @@
-package payment
+package proto
 
 import (
 	"context"

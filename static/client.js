@@ -1,5 +1,5 @@
-import { Payment } from './client-stub/payment/payment_pb.js';
-import { PaymentServiceClient } from './client-stub/payment/payment_grpc_web_pb.js';
+import { Payment } from './proto/payment/payment_pb.js';
+import { PaymentServiceClient } from './proto/payment/payment_grpc_web_pb.js';
 
 const paymentService = new PaymentServiceClient('http://localhost:8081');
 
